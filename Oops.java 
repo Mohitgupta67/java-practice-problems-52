@@ -1,0 +1,54 @@
+class Bank {
+    String accountHolder;
+    int accountNumber;
+    int balance;
+
+
+
+ 
+    Bank(String accountHolder , int accountNumber , int balance  ) {
+        this.accountHolder = accountHolder;
+        this.accountNumber = accountNumber;
+        this.balance = balance;
+    }
+    void deposite(int amount) {
+        balance = balance + amount;
+    }
+
+    void withdraw(int amount) {
+        if(amount<=balance) {
+            balance = balance - amount;
+        } else {
+            System.out.println("you have insufficient balance");
+        }
+    }
+    void displayBalance()  {
+        System.out.println("current balance:" + balance);
+    }
+}
+public class Oops {
+    public static void main(String args[]) {
+    
+      Bank b1 = new Bank("Mohit gupta" , 2500345 , 234566);
+     System.out.println("accountHolder:" + b1.accountHolder);
+     System.out.println("accountNumber:" + b1.accountNumber);
+     System.out.println("balance:" + b1.balance);
+   b1.deposite(5000);
+   System.out.println("deposite:" + 5000);
+   b1.withdraw(1500);
+   System.out.println("withdraw" + 1500);
+   b1.displayBalance();
+
+   Bank b2 = new Bank ("Murlidhar yadav" , 2500289 , 22 );
+    System.out.println("\naccountHolder" + b2.accountHolder);
+    System.out.println("accountNumber" + b2.accountNumber);
+    System.out.println("balance" + b2.balance);
+    b2.deposite(23232);
+    System.out.println("deposite" + 23232);
+    b2.withdraw(5000);
+        System.out.println("Withdraw:" + 5000);
+
+        b2.displayBalance();
+    
+    }
+}
